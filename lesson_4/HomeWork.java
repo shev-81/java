@@ -1,4 +1,7 @@
 package lesson_4;
+/**
+ * Домашнее задание Шевеленко Андрея Александровича к 4 уроку
+ */
 
 import java.util.Random;
 import java.util.Scanner;
