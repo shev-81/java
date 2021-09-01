@@ -2,8 +2,7 @@ package lesson_3;
 
 /**
  *  Домашнее задание Шевеленко Андрея Александровича к 3 уроку.
- *
- */
+  */
 public class HomeWork_3 {
 
     public static void main(String[] args) {
