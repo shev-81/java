@@ -6,6 +6,7 @@ package lesson_5;
  */
 public class HomeWork {
     public static void main(String[] args) {
+        System.out.println("Пункт 1 домашнего задания");
 
     }
 }
