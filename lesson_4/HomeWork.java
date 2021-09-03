@@ -61,19 +61,15 @@ public class HomeWork {
         for (int i=0; i < map.length; i++){
             //проверяем победит ли пользователь на ветках i
             if(isCellValid(i,0) && map[i][1] == DOT_X && map[i][2] == DOT_X){ xbloc=i; ybloc=0; map[xbloc][ybloc] = DOT_O; return true;}
-            if(map[i][0] == DOT_X && isCellValid(i,1) && map[i][2] == DOT_X) { xbloc=i; ybloc=1; map[xbloc][ybloc] = DOT_O; return true;}
             if(map[i][0] == DOT_X && map[i][1] == DOT_X && isCellValid(i,2)) { xbloc=i; ybloc=2; map[xbloc][ybloc] = DOT_O; return true;}
             //проверяем победит ли пользователь на ветках y
             if(isCellValid(0,i) && map[1][i] == DOT_X && map[2][i] == DOT_X) { xbloc=0; ybloc=i; map[xbloc][ybloc] = DOT_O; return true;}
-            if(map[0][i] == DOT_X && isCellValid(1,i) && map[2][i] == DOT_X) { xbloc=1; ybloc=i; map[xbloc][ybloc] = DOT_O; return true;}
             if(map[0][i] == DOT_X && map[1][i] == DOT_X && isCellValid(2,i)) { xbloc=2; ybloc=i; map[xbloc][ybloc] = DOT_O; return true;}
             //проверяем победит ли пользователь на диагональных ветках
             if(isCellValid(0,0)  && map[1][1] == DOT_X && map[2][2] == DOT_X) { xbloc=0; ybloc=0; map[xbloc][ybloc] = DOT_O;return true;}
-            if(map[0][0] == DOT_X && isCellValid(1,1) && map[2][2] == DOT_X) { xbloc=1; ybloc=1; map[xbloc][ybloc] = DOT_O; return true;}
             if(map[0][0] == DOT_X && map[1][1] == DOT_X && isCellValid(2,2)) { xbloc=2; ybloc=2; map[xbloc][ybloc] = DOT_O; return true;}
             // обратная диагональ
             if(isCellValid(0,2) && map[1][1] == DOT_X && map[2][0] == DOT_X) { xbloc=0; ybloc=2; map[xbloc][ybloc] = DOT_O; return true;}
-            if(map[0][2] == DOT_X && isCellValid(1,1) && map[2][0] == DOT_X) { xbloc=1; ybloc=1; map[xbloc][ybloc] = DOT_O; return true;}
             if(map[0][2] == DOT_X && map[1][1] == DOT_X && isCellValid(2,0)) { xbloc=2; ybloc=0; map[xbloc][ybloc] = DOT_O; return true;}
         }
         return false;
