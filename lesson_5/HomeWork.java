@@ -7,27 +7,31 @@ package lesson_5;
 // пункт 1 ДЗ создать класс "Сотрудник" с полями: ФИО, должность, email, телефон, зарплата, возраст.
 class   Worker{
 
-    String Fio, Post, Email, Tel;
-    int Wages, Age;
+    private String Fio, Post, Email, Tel;
+    private int Wages, Age;
 
     // Конструктор по умолчанию
     Worker() {}
 
 // пункт 2 ДЗ  Конструктор класса должен заполнять эти поля при создании объекта.
     Worker (String Fio, String Post, String Email, String Tel, int Wages,int Age) {
-        this.Fio = Fio;
-        this.Post = Post;
-        this.Email = Email;
-        this.Tel = Tel;
-        this.Wages = Wages;
-        this.Age = Age;
+        this.Fio    = Fio;
+        this.Post   = Post;
+        this.Email  = Email;
+        this.Tel    = Tel;
+        this.Wages  = Wages;
+        this.Age    = Age;
     }
 
 // пункт 3 ДЗ  Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль.
     void workerShow(){
         System.out.println("ФИО: "+ this.Fio+ " " +Age+" лет.\n должность - "+this.Post+"\n e-mail - "+this.Email+"\n телефон - "+this.Tel+"\n зарплата - "+Wages+" рублей.\n");
         }
+// метод геттер для возраста сотрудников
+    int getAge (){
+        return this.Age;
     }
+}
 
 
 public class HomeWork {
@@ -43,7 +47,7 @@ public class HomeWork {
 
 // выведем на печать всех сотрудников старше 40 лет
     for (int i=0; i<personAray.length; i++)
-        if (personAray[i].Age>40) personAray[i].workerShow();
+        if (personAray[i].getAge ()>40) personAray[i].workerShow();
 
 
 
