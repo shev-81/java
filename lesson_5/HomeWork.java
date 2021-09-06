@@ -6,30 +6,33 @@ package lesson_5;
  */
 // пункт 1 ДЗ создать класс "Сотрудник" с полями: ФИО, должность, email, телефон, зарплата, возраст.
 class   Worker{
-
-    private String Fio, Post, Email, Tel;
-    private int Wages, Age;
+    private String fio;
+    private String post;
+    private String email;
+    private String tel;
+    private int wages;
+    private int age;
 
     // Конструктор по умолчанию
     Worker() {}
 
 // пункт 2 ДЗ  Конструктор класса должен заполнять эти поля при создании объекта.
-    Worker (String Fio, String Post, String Email, String Tel, int Wages,int Age) {
-        this.Fio    = Fio;
-        this.Post   = Post;
-        this.Email  = Email;
-        this.Tel    = Tel;
-        this.Wages  = Wages;
-        this.Age    = Age;
+    Worker (String fio, String post, String email, String tel, int wages,int age) {
+      this.fio = fio;
+      this.post = post;
+      this.email = email;
+      this.tel = tel;
+      this.wages = wages;
+      this.age = age;
     }
 
 // пункт 3 ДЗ  Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль.
     void workerShow(){
-        System.out.println("ФИО: "+ this.Fio+ " " +Age+" лет.\n должность - "+this.Post+"\n e-mail - "+this.Email+"\n телефон - "+this.Tel+"\n зарплата - "+Wages+" рублей.\n");
-        }
+      System.out.println("ФИО: "+ this.fio+ " " +age+" лет.\n должность - "+this.post+"\n e-mail - "+this.email+"\n телефон - "+this.tel+"\n зарплата - "+wages+" рублей.\n");
+    }
 // метод геттер для возраста сотрудников
     int getAge (){
-        return this.Age;
+      return this.age;
     }
 }
 
