@@ -128,6 +128,7 @@ public class HomeWork6 {
         else {
             u.printRun();
             u.printToSail();
+            unknowObg++;
         }
     }
     System.out.println("Создано Котов - "+countCats+" шт.\nСоздано Собак - "+countDogs+" шт.\nСозданно неопознанных животных - "+unknowObg+" шт." );
