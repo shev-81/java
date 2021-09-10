@@ -1,5 +1,9 @@
 package lesson_7;
 
+/**
+ * Класс корма из тарелки для котов
+ */
+
 public class Plate {
     private int food;
     public Plate(int food) {

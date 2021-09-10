@@ -1,5 +1,8 @@
 package lesson_7;
 
+/**
+ * Класс голодных котов
+ */
 public class Cat {
     private String name;
     private int appetite;
