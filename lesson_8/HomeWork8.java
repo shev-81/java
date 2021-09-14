@@ -1,7 +1,7 @@
 package lesson_8;
 
 /**
- * 
+ *   Домашняя работа Шевеленко Андрея к 8 лекции
  */
 
 import javax.swing.*;
@@ -12,27 +12,34 @@ import java.awt.event.ActionListener;
 public class HomeWork8 extends JFrame {
     Font countFont = new Font("Arial",Font.BOLD, 50);
     Font resetFont = new Font("Arial",Font.BOLD, 30);
-    private int count = 0;
-    private int saveCount;
-    private boolean saveMode=false;
+    private int count = 0;              // Переменная счетчика
+    private int saveCount;              // Переменная сохранения результата счетчика
+    private boolean saveMode=false;     // Переменная статуса переключателя сохранения значения счетчика
     public HomeWork8(){
         setBounds(300,300,280,180);
         setTitle("Счетчик");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setLayout(null);
-
-        JLabel countLabel = new JLabel("0");                    //метка счетчика
+        setLayout(null);         //отменяем работу компановщика
+/**
+ *    метка счетчика
+ */
+        JLabel countLabel = new JLabel("0");
         countLabel.setFont(countFont);
         countLabel.setBounds(110, 15, 80, 60);
         add(countLabel);
-
-        JLabel saveCountLabel = new JLabel("0");                //метка сохранения опказателя счетчика
+/**
+ *    метка сохранения показателя счетчика
+ */
+        JLabel saveCountLabel = new JLabel("0");
         saveCountLabel.setFont(resetFont);
         saveCountLabel.setBounds(210, 80, 40, 30);
         add(saveCountLabel);
-
-        JButton minusButton = new JButton(" < ");               //кнопка минуса
+/**
+ *    кнопка минуса
+ */
+        JButton minusButton = new JButton(" < ");
         minusButton.setBounds(20, 20, 50, 50);
+        minusButton.setFont(new java.awt.Font("Dialog", 1, 14));
         add(minusButton);
         minusButton.addActionListener(new ActionListener() {
             @Override
@@ -41,10 +48,13 @@ public class HomeWork8 extends JFrame {
                 countLabel.setText(String.valueOf(count));
             }
         });
-
-        JButton plusButton = new JButton();                         //кнопка плюса
+/**
+ *    кнопка плюса
+ */
+        JButton plusButton = new JButton();
         plusButton.setText(" > ");
         plusButton.setBounds(200, 20, 50, 50);
+        plusButton.setFont(new java.awt.Font("Dialog", 1, 14));
         add(plusButton);
         plusButton.addActionListener(new ActionListener() {
             @Override
@@ -53,9 +63,12 @@ public class HomeWork8 extends JFrame {
                 countLabel.setText(String.valueOf(count));
             }
         });
-
-        JButton resetButton = new JButton("C");                 //кнопка сброса
+/**
+ *    кнопка сброса
+ */
+        JButton resetButton = new JButton("C");
         resetButton.setBounds(20, 80, 50, 30);
+        resetButton.setForeground(Color.red);
         add(resetButton);
         resetButton.addActionListener(new ActionListener() {
             @Override
@@ -64,8 +77,10 @@ public class HomeWork8 extends JFrame {
                 countLabel.setText(String.valueOf(count));
             }
         });
-
-        JButton saveButton = new JButton("Save count");         //кнопка сохранения
+/**
+ *    кнопка сохранения
+ */
+        JButton saveButton = new JButton("Save count");
         saveButton.setBounds(80, 80, 110, 30);
         add(saveButton);
         saveButton.addActionListener(new ActionListener() {
@@ -88,12 +103,6 @@ public class HomeWork8 extends JFrame {
         setVisible(true);
 
     }
-//    @Override
-//    public void paint(Graphics g) {
-//        Graphics2D graf = (Graphics2D) g;
-//        graf.setColor(Color.RED);
-//        graf.setFont(resetFont);
-//    }
 
     public static void main(String[] args) {
         new HomeWork8();
