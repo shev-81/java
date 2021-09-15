@@ -9,13 +9,13 @@ class Dog extends Animals{
     int canToSail;
     int maxDistanceRun=500;
     int maxDistanceToSail=10;
-    //конструктор по умолчанию класса Кот
+    //конструктор по умолчанию класса Собака
     Dog () {
         super();
         this.canRun=0;
         this.canToSail=0;
     }
-    // Конструктор со свойствами класса Кот
+    // Конструктор со свойствами класса Собака
     Dog (String name, String color,int canRun, int canToSail) {
         super (name,color);
         this.canRun=canRun;
@@ -26,7 +26,7 @@ class Dog extends Animals{
         else
         {this.canRun=maxDistanceRun;}
         //и так же по плаванию
-        if(canToSail>0 && canRun<=maxDistanceToSail)
+        if(canToSail>0 && canToSail<=maxDistanceToSail)
         {this.canToSail=canToSail;}
         else
         {this.canToSail=maxDistanceToSail;}
