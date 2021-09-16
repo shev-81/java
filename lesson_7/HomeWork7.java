@@ -27,7 +27,7 @@ public class HomeWork7 {
             cats.eat(plate);
             plate.info();
         }
-    System.out.printf("Все котики поели и в тарелке осталось - :");
+    System.out.printf("Коты поели. ");
     plate.info();
 
     }
