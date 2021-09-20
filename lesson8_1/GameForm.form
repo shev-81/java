@@ -27,7 +27,7 @@
           <component id="57512" class="javax.swing.JLabel" binding="labl">
             <constraints border-constraint="North"/>
             <properties>
-              <text value="Label"/>
+              <text value="Съиграем?"/>
             </properties>
           </component>
         </children>

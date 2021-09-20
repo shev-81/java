@@ -70,17 +70,17 @@ public class GameForm extends JFrame {
                         map[i][j].setText(DOT_X);
 
         }
-        if(isMapFull()) {
-            labl.setText("Ничья");
-            System.out.println("Ничья");
-            System.exit(0);
-        }
+
         if(checkWin(DOT_X)) {
             lbl.setText("Человек победил");
             System.out.println("Человек победил");
             System.exit(0);
         }
-
+        if(isMapFull()) {
+            labl.setText("Ничья");
+            System.out.println("Ничья");
+            System.exit(0);
+        }
         aiTurn();
 
         if(checkWin(DOT_O)){
