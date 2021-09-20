@@ -1,32 +1,35 @@
 package lesson8_1;
-
+/**
+ * Домашнее задание Шевеленко Андрея Александровича к 8 лекции
+ */
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Random;
 
-public class GameForm extends JFrame {
+import static java.lang.Thread.sleep;
+
+public class GameForm extends JFrame{
     private JPanel rootPan;
     private JPanel upPane;
     private JPanel gamePane;
-    public  JLabel labl;
-    public JButton virtButton;
+    private  JLabel labl;
+    private JButton virtButton;
     private static JButton [][] map;   // игровое поле
     public static  String DOT_X = "X"; // ход игрока
     public static  String DOT_O = "O"; // ход cpu
-    public static  String DOT_EMPTY = " ";   // '•'
+    public static  String DOT_EMPTY = " ";
     public static int xbloc;
     public static int ybloc;
     public static int SIZE = 3;
     public static Random rand = new Random();
-    Font gameFont = new Font("Arial",Font.BOLD, 70);
+    Font gameFont = new Font("Arial",Font.BOLD, 50);
 
     GameForm(){
        //настройки главной панели
        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
        labl.setFont(gameFont);
-       upPane.add(labl);
        setBounds(200,200,500,600);
 
        //настройки верхней панели
@@ -46,23 +49,23 @@ public class GameForm extends JFrame {
                virtButton.addActionListener(e -> {
                    try {
                        humanTurn(e,labl);
-                   } catch (InterruptedException interruptedException) {
-                       interruptedException.printStackTrace();
+                   } catch (InterruptedException ex) {
+                       ex.printStackTrace();
                    }
                });
            }
        }
        add(rootPan);
-       setVisible(true);
+
 
     }
     //ход игрока
-    public void humanTurn(ActionEvent avt, JLabel lbl) throws InterruptedException {
+    public  static void humanTurn(ActionEvent avt, JLabel labl) throws InterruptedException {
         if(avt.getActionCommand().equals(DOT_O)) {
-            lbl.setText("Ходи еще");
+            //labl.setText("Ходи еще");
         }
         else {
-            lbl.setText("Ход игрока");
+            labl.setText("Ход игрока");
             System.out.println(avt.getSource().hashCode());
             for(int i=0;i<3;i++)
                 for(int j=0;j<3;j++)
@@ -72,37 +75,49 @@ public class GameForm extends JFrame {
         }
 
         if(checkWin(DOT_X)) {
-            lbl.setText("Человек победил");
+            TestThread thObj = new TestThread(labl);
+            Thread thr = new Thread(thObj);
+            thr.start();
+            //labl.setText("Победа");
             System.out.println("Человек победил");
+            sleep(3000);
             System.exit(0);
         }
         if(isMapFull()) {
-            labl.setText("Ничья");
+            TestThread thObj = new TestThread(labl);
+            Thread thr = new Thread(thObj);
+            thr.start();
+            //labl.setText("Ничья");
             System.out.println("Ничья");
+            sleep(3000);
             System.exit(0);
         }
-        aiTurn();
+        aiTurn(labl);
 
         if(checkWin(DOT_O)){
-            lbl.setText("Компьютер победил");
+            TestThread thObj = new TestThread(labl);
+            Thread thr = new Thread(thObj);
+            thr.start();
+            //labl.setText("Поражение");
             System.out.println("Компьютер победил");
+            sleep(3000);
             System.exit(0);
         }
 
 
     }
     //Ход CPU
-    public static void aiTurn() {
+    public static void aiTurn(JLabel labl) {
         int x, y;
         do {
             x = rand.nextInt(SIZE);
             y = rand.nextInt(SIZE);
         } while (!isCellValid(x, y));
         xbloc = x; ybloc = y;
-        BlokWinHuman();
+        BlokWinHuman(labl);
     }
     // Метод Блокировки победы человека
-    public static boolean BlokWinHuman() {
+    public static boolean BlokWinHuman(JLabel labl) {
         for (int i=0; i < map.length; i++){
             //проверяем победит ли пользователь на ветках i
             if(isCellValid(i,0) && map[i][1].getText().equals(DOT_X) && map[i][2].getText().equals(DOT_X)){ xbloc=i; ybloc=0; map[xbloc][ybloc].setText(DOT_O);  return true;}
@@ -118,6 +133,7 @@ public class GameForm extends JFrame {
             if(map[0][2].getText().equals(DOT_X) && map[1][1].getText().equals(DOT_X) && isCellValid(2,0)) { xbloc=2; ybloc=0; map[xbloc][ybloc].setText(DOT_O); return true;}
         }
         map[xbloc][ybloc].setText(DOT_O);
+        //labl.setText("CPU походил");
         return false;
     }
     // проверка пустое ли поле
@@ -144,5 +160,23 @@ public class GameForm extends JFrame {
             }
         }
         return true;
+    }
+}
+class TestThread implements Runnable{
+    private JLabel lbl;
+    // присваиваем ссылку с метки из основного окна и потока, на метку для объекта второго потока
+    // обе переменные имеют ссылки на один объект метки.
+    TestThread(JLabel lble){
+        lbl = lble;
+    }
+    @Override
+    public void run(){
+        SwingUtilities.invokeLater(()->lbl.setText("Работаем"));
+        System.out.println("работает параллельный поток");
+        System.out.println(lbl.getText());
+
+        //        System.out.println(lbl.getText());
+//        this.lbl.setText("END!");
+
     }
 }
