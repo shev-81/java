@@ -35,21 +35,20 @@ public class MainClass {
                 if (arr[j].cost < arr[min].cost) {
                     min = j;
                 }
-//                if (arr[j].cost == arr[min].cost) {
-//                    if (arr[j].memory < arr[min].memory){
-//                        min = j;
-//                    }
-//                }
-
+                if(arr[j].cost == arr[min].cost && arr[j].memory < arr[min].memory){
+                    min = j;
+                }
+                if(arr[j].cost == arr[min].cost && arr[j].memory == arr[min].memory &&  arr[j].nameBook.charAt(0) < arr[min].nameBook.charAt(0)){
+                    min = j;
+                }
             }
 
             if (i == min) {
                 continue;
             }
-
-            int temp = arr[i].cost;
-            arr[i].cost = arr[min].cost;
-            arr[min].cost = temp;
+            MyNbook temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
         }
     }
 
@@ -66,7 +65,8 @@ public class MainClass {
         for (MyNbook u: arr) {
             System.out.println("Производитель : "+u.nameBook+", Память : "+ u.memory+", Цена : "+u.cost);
         }
-        System.out.print("Затраченное время на сортировку - "); endTime();
+        System.out.print("Затраченное время на сортировку - ");
+        endTime();
     }
 }
 /** Класс создания экземпляра ноутбука
