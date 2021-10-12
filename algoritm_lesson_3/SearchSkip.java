@@ -55,10 +55,10 @@ public class SearchSkip {
     }
     public static void main(String[] args) {
         int [] array1 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20};
-        int [] array2 = {1,3,4,5,6,7,8,9,10};
+        int [] array2 = {1,2,3,4,5,6,7,8,9,10};
         int [] array3 = {};
         System.out.println("В первом массив потеряно число - "+search(array1));
-//        System.out.println("Во втором массиве потеряно число - "+search(array2));
+        System.out.println("Во втором массиве потеряно число - "+search(array2));
 //        System.out.println("В третьем массиве потеряно число - "+search(array3));
     }
 }
