@@ -2,6 +2,16 @@ package algoritm_lesson_3;
 
 import java.util.Scanner;
 
+/**
+ *
+ *   Домашняя работа к 3 лекции Шевеленко Андрея
+ *
+ *   п.3*   Оптимизирована очередь, очередь сделана циклической.
+ *          В ней отслеживаются позиции начала очереди и ее конца,
+ *          так же контролируются перемещение head и tail по массиву
+ *          и в зависимости от их положения выводим находящиеся в
+ *          очереди элементы методом toString().
+ */
 public class QueueMassive<E> implements Queue<E>{
     protected final E[] data;
     protected int size;

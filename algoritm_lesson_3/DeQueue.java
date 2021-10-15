@@ -3,7 +3,12 @@ package algoritm_lesson_3;
 import java.util.Scanner;
 
 /**
- * 2. Создать класс для реализации Deque.
+ *    Домашняя работа к 3 лекции Шевеленко Андрея
+ *
+ * 2. Создан класс DeQueue расширяющий QueueMassive.
+ *    в него добавлены методы описывающие новую
+ *    структуру данных Дек.  insertInHead(E value),
+ *    removeInTail().
  */
 public class DeQueue<E> extends QueueMassive<E>{
     public DeQueue(int maxSize) {
@@ -46,7 +51,7 @@ public class DeQueue<E> extends QueueMassive<E>{
         Scanner scaner = new Scanner(System.in);
         DeQueue <Integer> arrQueue = new DeQueue<>(5);
         while(true){
-            System.out.println("\nДобавить в голове : 1:\nДобавить в хвост очереди: 2:\nЗабрали из головы очереди 3:\nЗабрали со стороны хвоста 4: ");
+            System.out.println("\nДобавить в голове : 1:\nДобавить в хвост очереди: 2:\nЗабрать из головы очереди 3:\nЗабрать со стороны хвоста 4: ");
             switch (scaner.nextInt()){
                 case 1:
                     System.out.print("Добавить в голове : ");
