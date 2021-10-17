@@ -1,5 +1,5 @@
 package algoritm_lesson_4;
-
+//ДЗ 4 для сдачи преподавателю
 import java.util.Iterator;
 
 public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
@@ -113,7 +113,7 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
     }
 
     /**
-     *    Переписанны методы LinkedListIterator
+     *    Переписанны методы LinkedListIterator !!!
      */
     class LinkedListIterator implements Iterator<E> {
 
