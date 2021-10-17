@@ -1,5 +1,5 @@
 package algoritm_lesson_4;
-
+//ДЗ 4 для сдачи преподавателю
 public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements TwoSideLinkedList<E> {
 
     protected Node<E> last;

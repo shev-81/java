@@ -1,5 +1,5 @@
 package algoritm_lesson_4;
-
+//ДЗ 4 для сдачи преподавателю
 /**
  *   Домашнее Задание Шевеленко Андрея Александровича к 4 лекции.
  */
@@ -38,7 +38,6 @@ public class TestMain4 {
 //        System.out.println("Find 1: " + linkedList.contains(1));
 //        System.out.println("Find 4: " + linkedList.contains(4));
 //        System.out.println("Find 4444: " + linkedList.contains(4444));
-
 //        linkedList.removeFirst();
 //        linkedList.remove(4);
 
