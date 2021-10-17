@@ -9,7 +9,7 @@ public class Anagram {
     private char[] chars;
 
     public static void main(String[] args) {
-        System.out.println(new Anagram().findAll("aabb"));
+        System.out.println(new Anagram().findAll("asdf"));
     }
 
     private Set<String> findAll(String word) {
