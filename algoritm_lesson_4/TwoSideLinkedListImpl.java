@@ -18,13 +18,22 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
         size++;
         if (size == 1) {
             lastObj = first;
+            System.out.println("обьект lastObj - "+lastObj.item);
+            if(lastObj.next!=null)System.out.println("lastObj.next - "+lastObj.next);else  System.out.println("lastObj.next - null");
+            System.out.println("lastObj.prev - "+lastObj.prev);
+        }
+        if(size==2){
+            System.out.println("size - "+size);
+            System.out.println("обьект lastObj - "+lastObj.item);
+            if(lastObj.next!=null)System.out.println("lastObj.next - "+lastObj.next);else  System.out.println("lastObj.next - null");
+            System.out.println("lastObj.prev - "+lastObj.prev);
         }
         System.out.println("Объект № - "+first.item);
         if(tmp!=null)System.out.println("tmp.item - "+tmp.item); else System.out.println("tmp - null");
         System.out.println("first.next "+first.next);
         if(tmp!=null)System.out.println("tmp.prev "+tmp.prev);else System.out.println("tmp - null");
         if(last!=null)System.out.println("last - "+last.item); else  System.out.println("last - null");
-        if(lastObj!=null)System.out.println("первый обьект поле lastObj - "+lastObj.item); else System.out.println("первый обьект поле lastObj - null");
+//        if(lastObj!=null)System.out.println("первый обьект поле lastObj - "+lastObj.item); else System.out.println("первый обьект поле lastObj - null");
         System.out.println("Создан элемент - size = "+size+"\n");
 
         last = tmp;
@@ -45,7 +54,6 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
             insertFirst(value);
             return;
         }
-
         lastObj.next = newNode;
         newNode.prev = lastObj;
         lastObj = newNode;
@@ -95,6 +103,6 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
 
     @Override
     public E getLast() {
-        return last.item;
+        return lastObj.item;
     }
 }

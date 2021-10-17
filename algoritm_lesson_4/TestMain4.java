@@ -13,6 +13,9 @@ public class TestMain4 {
     private static void testLinkedList() {
 //        LinkedList<Integer> linkedList = new SimpleLinkedListImpl<>();
 //        TwoSideLinkedListImpl<Integer> linkedList = new TwoSideLinkedListImpl<>();
+/**
+*  Реализация Дека на основе дву направленного списка DeqTwoSideList
+*/
         DeqTwoSideList<Integer> linkedList = new  DeqTwoSideList<>();
 
         linkedList.insertFirst(1);
@@ -23,13 +26,13 @@ public class TestMain4 {
 //        linkedList.insertFirst(6);
 //        linkedList.insertFirst(7);
 //        linkedList.insertFirst(8);
-//        linkedList.insertLast(21);
-//        linkedList.insertLast(22);
-        linkedList.display();
-        linkedList.DeleteLast();
-        linkedList.display();
-        linkedList.DeleteLast();
 
+// Добавим элемент с др стороны
+        linkedList.insertLast(21);
+        linkedList.insertLast(22);
+        linkedList.display();
+// удалим последний элемент
+        System.out.println("Удален последний элемент - " +linkedList.DeleteLast());
 
 //        System.out.println("Find 2: " + linkedList.contains(2));
 //        System.out.println("Find 1: " + linkedList.contains(1));
@@ -42,6 +45,8 @@ public class TestMain4 {
 
         linkedList.display();
         System.out.println("Работа итератора");
+
+        System.out.println("");
 
         /**
          * Вариант перебора элементов списка без interface LinkedList<E> extends Iterable<E>
