@@ -61,7 +61,7 @@ public class BagSwing extends JFrame {
  */
         // Создание кнопки
         JButton buttonAdd = new JButton("Взять самые дорогие -->");
-        buttonAdd.setBounds(250,100,200,50);
+        buttonAdd.setBounds(250,50,200,50);
         buttonAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 //                modelList.add(modelList.getSize(), "-- Новая запись --");
@@ -83,8 +83,14 @@ public class BagSwing extends JFrame {
         allItemsLabl.setBounds(60,10,200,20);
 
         //метка для название вещей которые ВЗЯЛИ
-        JLabel ItemsBagLabl = new JLabel("Вещи в рюкзаке");
+        JLabel ItemsBagLabl = new JLabel("Вещи в рюкзаке до 10 кг.");
         ItemsBagLabl.setBounds(540,10,200,20);
+
+        //метка для описания задачи
+        JLabel taskLabl1 = new JLabel("Рюкзак вмещает в себя 10 кг.");
+        taskLabl1.setBounds(230,40,230,200);
+        JLabel taskLabl2 = new JLabel("нужно взять из набора самое ценное.");
+        taskLabl2.setBounds(230,60,230,200);
 /**
  *  Добавление всех элементов на панель
  */
@@ -93,6 +99,8 @@ public class BagSwing extends JFrame {
         panel.add(buttonAdd);
         panel.add(allItemsLabl);
         panel.add(ItemsBagLabl);
+        panel.add(taskLabl1);
+        panel.add(taskLabl2);
         add(panel);
 
 
