@@ -1,5 +1,10 @@
 package algoritm_lesson_5;
 
+/**
+ * Домашнее задание по 5 лекции для сдачи преподавателю
+ * п.2 Задача о Рюкзаке на SWING
+ */
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
