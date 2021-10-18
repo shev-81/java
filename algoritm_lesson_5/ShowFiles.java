@@ -5,7 +5,7 @@ import java.io.File;
 public class ShowFiles {
     public static void main(String[] args) {
 
-        File file = new File("C:\\Users\\shev-\\IdeaProjects\\LearnGeetBraine\\src\\main\\java");
+        File file = new File("C:\\Users\\Andrey\\IdeaProjects\\Lesson_1\\src\\main\\java");
         viewFiles(file);
     }
 
