@@ -11,12 +11,12 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class BagSwing extends JFrame {
-
-    // создание  объекта модели данных  для двух списков для последующего заполнения
-    private DefaultListModel<String> modelList = new DefaultListModel<>();
-    private DefaultListModel<String> modelListBag = new DefaultListModel<>();
-
+    private DefaultListModel<String> modelList;
+    private DefaultListModel<String> modelListBag;
     BagSwing(){
+        // создание  объекта модели данных  для двух списков для последующего заполнения
+        modelList = new DefaultListModel<>();
+        modelListBag = new DefaultListModel<>();
         setSize(720,320);
         setTitle("Задача о рюкзаке.");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
