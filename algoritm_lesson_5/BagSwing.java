@@ -1,17 +1,22 @@
 package algoritm_lesson_5;
 
+/**
+ * Домашнее задание по 5 лекции для сдачи преподавателю
+ * п.2 Задача о Рюкзаке на SWING
+ */
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
 public class BagSwing extends JFrame {
-
-    // создание  объекта модели данных  для двух списков для последующего заполнения
-    private DefaultListModel<String> modelList = new DefaultListModel<>();
-    private DefaultListModel<String> modelListBag = new DefaultListModel<>();
-
+    private DefaultListModel<String> modelList;
+    private DefaultListModel<String> modelListBag;
     BagSwing(){
+        // создание  объекта модели данных  для двух списков для последующего заполнения
+        modelList = new DefaultListModel<>();
+        modelListBag = new DefaultListModel<>();
         setSize(720,320);
         setTitle("Задача о рюкзаке.");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -56,7 +61,7 @@ public class BagSwing extends JFrame {
  */
         // Создание кнопки
         JButton buttonAdd = new JButton("Взять самые дорогие -->");
-        buttonAdd.setBounds(250,100,200,50);
+        buttonAdd.setBounds(250,50,200,50);
         buttonAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 //                modelList.add(modelList.getSize(), "-- Новая запись --");
@@ -78,8 +83,14 @@ public class BagSwing extends JFrame {
         allItemsLabl.setBounds(60,10,200,20);
 
         //метка для название вещей которые ВЗЯЛИ
-        JLabel ItemsBagLabl = new JLabel("Вещи в рюкзаке");
+        JLabel ItemsBagLabl = new JLabel("Вещи в рюкзаке до 10 кг.");
         ItemsBagLabl.setBounds(540,10,200,20);
+
+        //метка для описания задачи
+        JLabel taskLabl1 = new JLabel("Рюкзак вмещает в себя 10 кг.");
+        taskLabl1.setBounds(230,40,230,200);
+        JLabel taskLabl2 = new JLabel("нужно взять из набора самое ценное.");
+        taskLabl2.setBounds(230,60,230,200);
 /**
  *  Добавление всех элементов на панель
  */
@@ -88,6 +99,8 @@ public class BagSwing extends JFrame {
         panel.add(buttonAdd);
         panel.add(allItemsLabl);
         panel.add(ItemsBagLabl);
+        panel.add(taskLabl1);
+        panel.add(taskLabl2);
         add(panel);
 
 
