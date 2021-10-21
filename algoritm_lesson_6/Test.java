@@ -1,4 +1,7 @@
 package algoritm_lesson_6;
+/**
+ *  Домашняя работа Шевеленко Андрея Александровича к 6 лекции.
+ */
 
 import java.util.Random;
 
@@ -20,15 +23,17 @@ public class Test {
                 znac =rand.nextBoolean();
                 num = rand.nextInt(25);
                 if(!znac){
-                    num = - num*2;
+                    num = - num;
                 }
                 treenum[i].add(num);         // Добавляем узел
             }
             treenum[i].display();
 
             if(tmpRootNode.isBalanced(treenum[i].getRoot())){
+                System.out.println("Сбалансированно.");
                 balansedTree++;
             }else {
+                System.out.println("Не сбалансированно");
                 nobalansedTree++;
             }
 
