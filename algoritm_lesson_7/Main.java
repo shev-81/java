@@ -1,5 +1,8 @@
 package algoritm_lesson_7;
 
+/**
+ *   Домашнее задание Шевеленко Андрея Александровича к 7 лекции по алгоритмам
+ */
 public class Main {
     public static void main(String[] args) {
 //        testGraph();

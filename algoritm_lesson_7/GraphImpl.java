@@ -1,5 +1,8 @@
 package algoritm_lesson_7;
 
+/**
+ *   Домашнее задание Шевеленко Андрея Александровича к 7 лекции по алгоритмам
+ */
 import java.util.*;
 
 public class GraphImpl implements Graph {
@@ -103,12 +106,12 @@ public class GraphImpl implements Graph {
                 if(vertex.getLabel().equals("Воронеж")){              // Добавим условие для поиска
                     wayList.add(vertex);
                     setWays.add(wayList);                             // если мы дошли до конечной точке сохраняем набор в сете наборов
-                    wayList = new LinkedList<>();                                  // и очищаем список узлов
-                    endVertex = vertex;                               // дойдя до конца сохраним вершину конца
+                    wayList = new LinkedList<>();                     // создаем новый список узлов
+                    endVertex = vertex;                               // дойдя до конца сохраним вершину конца пути
                     System.out.println("totalWay "+totalWay);
                     totalWayList.add(totalWay);                       // сохраняем в списке расстояние для маршрута
                     totalWay=0;
-                    if(getNearUnvisitedVertex(startVertex)!=null)     // если не осталось не посещенных узлов
+                    if(getNearUnvisitedVertex(startVertex)!=null)     // если есть следующий не посещенный узел после стартового
                         wayKm=adjMatrix[indexOf(startVertex.getLabel())][indexOf(getNearUnvisitedVertex(startVertex).getLabel())];
                 }
 
