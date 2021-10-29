@@ -1,6 +1,6 @@
 package algoritm_lesson_8;
 
-public class DoubleHashTable<K, V> extends HashTableImpl<K, V> {
+public class DoubleHashTable<K, V> extends HashTableLinkimp<K, V> {
     public DoubleHashTable(int initialCapacity) {
         super(initialCapacity);
     }
