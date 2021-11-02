@@ -14,7 +14,7 @@ public class Treadmill implements Obstacle{
     // проверяем может ли пробежать игрок по дорожке
     @Override
     public boolean canDoit(Participant can) {
-        return this.weight <= can.runs();
+        return this.weight <= can.getMaxrun();
 
     }
 }

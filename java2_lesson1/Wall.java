@@ -14,6 +14,6 @@ public class Wall implements Obstacle{
     // проверяем может ли игрок перепрыгнуть препятствие
     @Override
     public boolean canDoit(Participant can) {
-        return this.height <= can.jumps();
+        return this.height <= can.getMaxjump();
     }
 }
