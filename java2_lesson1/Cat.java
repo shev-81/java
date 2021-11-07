@@ -19,15 +19,7 @@ public class Cat implements Participant{
         this.name = name;
     }
 
-    @Override
-    public int runs() {
-        return maxrun;
-    }
 
-    @Override
-    public int jumps() {
-        return maxjump;
-    }
     @Override
     public int getMaxrun() {
         return maxrun;
