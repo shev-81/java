@@ -7,7 +7,7 @@ package java2_lesson1;
 public class Treadmill implements Obstacle{
 
     int weight;
-    String name = " Treadmill";
+    String name = " Дистанция";
     public Treadmill(int weight) {
         this.weight = weight;
     }
