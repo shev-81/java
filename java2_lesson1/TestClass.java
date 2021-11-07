@@ -33,33 +33,45 @@ public class TestClass {
         participantsArray[7] = new Robot(80,8, "Мегатрон");
         participantsArray[8] = new Robot(90,9, "Максимус");
 
-
         for (int i=0; i< participantsArray.length; i ++){
             System.out.println(participantsArray[i].getName()+": дистанция - "+participantsArray[i].getMaxrun()+" высота прыжка - "+participantsArray[i].getMaxjump());
             for (int j=0; j<obstaclesArray.length; j++){
-                 if(obstaclesArray[j] instanceof Wall) {
-                     obstacleWall = (Wall) obstaclesArray[j];
-                     if (obstacleWall.canDoit(participantsArray[i])) {
-                         System.out.println("  перепрыгнул стену высотой "+obstacleWall.height);
-                     } else {
-                         System.out.println(participantsArray[i].getName() + " выбыл из марафона. \n");
-                         break;
-                         }
-                 }else {
-                     if (obstaclesArray[j] instanceof Treadmill) {
-                         obstacleTreadmill = (Treadmill) obstaclesArray[j];
-                         if (obstacleTreadmill.canDoit(participantsArray[i])) {
-                             System.out.println("  пробежал путь длинной "+obstacleTreadmill.weight);
-                         } else {
-                             System.out.println(participantsArray[i].getName() + " выбыл из марафона. \n");
-                             break;
-                         }
-                     }
-                 }
-            if (j+1==obstaclesArray.length) System.out.println(participantsArray[i].getName()+" преодолел все препятствия и завершил марафон!!! ");
+                if (obstaclesArray[j].canDoit(participantsArray[i])) {
+                        System.out.println("  преодолел перпятствие"+obstaclesArray[j]);
+                    } else {
+                        System.out.println(participantsArray[i].getName() + " выбыл из марафона. \n");
+                        break;
+                    }
+                if (j+1==obstaclesArray.length) System.out.println(participantsArray[i].getName()+" преодолел все препятствия и завершил марафон!!! ");
             }
 
         }
+//        for (int i=0; i< participantsArray.length; i ++){
+//            System.out.println(participantsArray[i].getName()+": дистанция - "+participantsArray[i].getMaxrun()+" высота прыжка - "+participantsArray[i].getMaxjump());
+//            for (int j=0; j<obstaclesArray.length; j++){
+//                 if(obstaclesArray[j] instanceof Wall) {
+//                     obstacleWall = (Wall) obstaclesArray[j];
+//                     if (obstacleWall.canDoit(participantsArray[i])) {
+//                         System.out.println("  перепрыгнул стену высотой "+obstacleWall.height);
+//                     } else {
+//                         System.out.println(participantsArray[i].getName() + " выбыл из марафона. \n");
+//                         break;
+//                         }
+//                 }else {
+//                     if (obstaclesArray[j] instanceof Treadmill) {
+//                         obstacleTreadmill = (Treadmill) obstaclesArray[j];
+//                         if (obstacleTreadmill.canDoit(participantsArray[i])) {
+//                             System.out.println("  пробежал путь длинной "+obstacleTreadmill.weight);
+//                         } else {
+//                             System.out.println(participantsArray[i].getName() + " выбыл из марафона. \n");
+//                             break;
+//                         }
+//                     }
+//                 }
+//            if (j+1==obstaclesArray.length) System.out.println(participantsArray[i].getName()+" преодолел все препятствия и завершил марафон!!! ");
+//            }
+//
+//        }
     }
 }
 
