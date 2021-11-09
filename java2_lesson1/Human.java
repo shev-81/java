@@ -24,6 +24,9 @@ public class Human implements Participant{
         this.maxjump = maxjump;
         this.name = name;
     }
-
+    @Override
+    public String toString(){
+        return name.concat(" может подпрыгнуть на ").concat(Integer.toString(maxjump)).concat(" и пробежать ").concat(Integer.toString(maxrun));
+    }
 
 }

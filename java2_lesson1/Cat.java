@@ -28,4 +28,8 @@ public class Cat implements Participant{
     public int getMaxjump() {
         return maxjump;
     }
+    @Override
+    public String toString(){
+        return name.concat(" может подпрыгнуть на ").concat(Integer.toString(maxjump)).concat(" и пробежать ").concat(Integer.toString(maxrun));
+    }
 }

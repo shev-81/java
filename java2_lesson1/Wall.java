@@ -7,7 +7,7 @@ package java2_lesson1;
 public class Wall implements Obstacle{
 
     int height;
-    String name =" Стена";
+    private String name =" Стена";
     public Wall(int height) {
         this.height = height;
     }
