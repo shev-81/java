@@ -32,7 +32,7 @@ public class TestClass {
         participantsArray[8] = new Robot(90,9, "Максимус");
 
         for (int i=0; i< participantsArray.length; i ++){
-            System.out.println(participantsArray[i].getName()+": дистанция - "+participantsArray[i].getMaxrun()+" высота прыжка - "+participantsArray[i].getMaxjump());
+            System.out.println(participantsArray[i]);
             for (int j=0; j<obstaclesArray.length; j++){
                 if (obstaclesArray[j].canDoit(participantsArray[i])) {
                         System.out.println("  преодолел перпятствие"+obstaclesArray[j]);
@@ -42,9 +42,7 @@ public class TestClass {
                     }
                 if (j+1==obstaclesArray.length) System.out.println(participantsArray[i].getName()+" преодолел все препятствия и завершил марафон!!! \n");
             }
-
         }
-
     }
 }
 
