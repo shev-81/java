@@ -1,6 +1,6 @@
 package java2_lesson2;
 
-public class MyArrayDataException extends Throwable{
+public class MyArrayDataException extends RuntimeException{
     int i;
     int j;
     MyArrayDataException(int i, int j){

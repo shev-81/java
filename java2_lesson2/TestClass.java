@@ -14,7 +14,7 @@ public class TestClass {
     public static String [][] strArr2 = new String [3][3];
 
     // метод анализа строки
-    public static boolean  analizeStrArray(String[][] array) throws MyArrayDataException,MyArraySizeException{
+    public static boolean  analizeStrArray(String[][] array){
         int arrVar;
         //проверяем является ли массив заданного размера
         if(array.length == 4 && array[0].length == 4){
@@ -24,6 +24,8 @@ public class TestClass {
                    try{
                    arrVar = Integer.parseInt(array[i][j]);
                    }catch (NumberFormatException e){
+                       //т.к. MyArrayDataException  и  MyArraySizeException наследуют RuntimeException
+                       //нет необходимости в использовании trows в названии метода их содержащего.
                       throw new MyArrayDataException(i,j);
                    }
                    //преобразование прошло успешно выводим на экран
