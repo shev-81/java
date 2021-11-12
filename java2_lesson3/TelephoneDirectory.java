@@ -22,6 +22,7 @@ public class TelephoneDirectory {
 
     //  получение списка элементов по фамилии
     public LinkedList get (String value){
+        if(!telDirectory.containsValue(value)) System.out.println(value+" tel: нет номера.");
         LinkedList<String> listValue = new LinkedList<>();
 //        var listset = telDirectory.entrySet();
         Set<String> listset = telDirectory.keySet();
@@ -58,7 +59,7 @@ public class TelephoneDirectory {
 
         telDir.get("Иванов");
         telDir.get("Сидоров");
-        telDir.get("Жуков");
+        telDir.get("Жуков");   // для Жукова нет номера
         telDir.get("Петров");
         telDir.get("Шевеленко");
     }
