@@ -13,22 +13,32 @@ public class TelephoneDirectory {
     public TelephoneDirectory() {
         telDirectory = new LinkedHashMap();
     }
+
     //Добавление Элемента
     public boolean add (String key, String value){
         telDirectory.put(key,value);
         return true;
     }
+
     //  получение списка элементов по фамилии
     public LinkedList get (String value){
-        LinkedList<String> listValue = new LinkedList<String>();
-        var listset = telDirectory.entrySet();
-        for (Object u:  listset){
-            var mapEntry = (Map.Entry) u;
-            if(mapEntry.getValue().equals(value)){
-                listValue.add((String) mapEntry.getKey());
-                System.out.println(value+" tel: "+mapEntry.getKey());
+        LinkedList<String> listValue = new LinkedList<>();
+//        var listset = telDirectory.entrySet();
+        Set<String> listset = telDirectory.keySet();
+        for (String key: listset){
+            if(telDirectory.get(key).equals(value)){
+                listValue.add((String) telDirectory.get(key));
+                System.out.println(telDirectory.get(key)+" tel: "+key);
             }
         }
+// перебор элементов с использованием ячеек     Map.Entry
+//        for (Object u:  listset){
+//            var mapEntry = (Map.Entry) u;
+//            if(mapEntry.getValue().equals(value)){
+//                listValue.add((String) mapEntry.getKey());
+//                System.out.println(value+" tel: "+mapEntry.getKey());
+//            }
+//        }
         return listValue;
     }
 
