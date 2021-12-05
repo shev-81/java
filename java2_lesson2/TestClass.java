@@ -9,13 +9,14 @@ public class TestClass {
             {"1","2","3","4"},
             {"3","5","6","7"},
             {"8","9","10","11"},
-            {"12","sdfsd","14","15"}
+            {"12","13","14","15"}
     };
     public static String [][] strArr2 = new String [3][3];
 
     // метод анализа строки
     public static boolean  analizeStrArray(String[][] array){
         int arrVar;
+        int summ=0;
         //проверяем является ли массив заданного размера
         if(array.length == 4 && array[0].length == 4){
            for (int i=0; i<array.length; i++){
@@ -23,6 +24,7 @@ public class TestClass {
                    // проверяем корерктность преобразований
                    try{
                    arrVar = Integer.parseInt(array[i][j]);
+                   summ = summ+arrVar;
                    }catch (NumberFormatException e){
                        //т.к. MyArrayDataException  и  MyArraySizeException наследуют RuntimeException
                        //нет необходимости в использовании trows в названии метода их содержащего.
@@ -33,6 +35,7 @@ public class TestClass {
                }
                System.out.println();
            }
+            System.out.println("Сумма элементов: "+summ);
            return true;
         }else{
            throw new MyArraySizeException();
