@@ -1,9 +1,9 @@
 package java3_lesson3;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
-public class MainClass {
+public class StreamTests {
 
     public static void main(String[] args) {
         //byteArrStream();
@@ -16,12 +16,15 @@ public class MainClass {
 
     private static void decoder() {
         String data = "SmF2YSDQvdC1INGC0L7RgNC80L7Qt9C40YIhCg==";
-        try {
-            String second = new String(data.getBytes(StandardCharsets.UTF_8),"unicode");
-            System.out.println(second);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        Base64.Decoder dec = Base64.getDecoder();
+        byte [] decodeByteArr = dec.decode(data);
+        System.out.println(new String(decodeByteArr));
+//        try {
+//            String second = new String(data.getBytes(StandardCharsets.UTF_8),"");
+//            System.out.println(second);
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private static void fileStream4(){
